@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - "b*"
+      - "v*"
 
 name: Release Binaries
 
