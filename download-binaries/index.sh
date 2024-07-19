@@ -51,7 +51,7 @@ mv "$tmpdir/README.txt" ../bin/win32-x64.README
 
 echo 'windows ia32'
 echo '  downloading from github.com'
-download 'https://github.com/sudo-nautilus/FFmpeg-Builds-Win32/releases/download/latest/ffmpeg-n6.0-latest-win32-gpl-7.0.zip' win32-ia32.zip
+download 'https://github.com/sudo-nautilus/FFmpeg-Builds-Win32/releases/download/latest/ffmpeg-n6.0-latest-win32-gpl-6.0.zip' win32-ia32.zip
 echo '  extracting'
 unzip -o -d ../bin -j win32-ia32.zip '*/bin/ffmpeg.exe' '*/bin/ffprobe.exe'
 mv ../bin/ffmpeg.exe ../bin/ffmpeg-win32-ia32
