@@ -39,7 +39,7 @@ set -x # todo: remove
 echo 'windows x64'
 echo '  downloading from github.com/GyanD/codexffmpeg'
 # todo: 404
-download 'https://github.com/GyanD/codexffmpeg/releases/download/7.0/ffmpeg-7.0-essentials_build.7z' win32-x64.7z
+download 'https://github.com/GyanD/codexffmpeg/releases/download/7.0/ffmpeg-7.0-full_build.7z' win32-x64.7z
 echo '  extracting'
 tmpdir=$(mktemp -d)
 $p7zip_exec e -y -bd -o"$tmpdir" win32-x64.7z >/dev/null
@@ -51,7 +51,7 @@ mv "$tmpdir/README.txt" ../bin/win32-x64.README
 
 echo 'windows ia32'
 echo '  downloading from github.com'
-download 'https://github.com/sudo-nautilus/FFmpeg-Builds-Win32/releases/download/latest/ffmpeg-n7.0-latest-win32-gpl-7.0.zip' win32-ia32.zip
+download 'https://github.com/sudo-nautilus/FFmpeg-Builds-Win32/releases/download/latest/ffmpeg-n6.0-latest-win32-gpl-7.0.zip' win32-ia32.zip
 echo '  extracting'
 unzip -o -d ../bin -j win32-ia32.zip '*/bin/ffmpeg.exe' '*/bin/ffprobe.exe'
 mv ../bin/ffmpeg.exe ../bin/ffmpeg-win32-ia32
@@ -101,8 +101,8 @@ xzcat linux-arm64.tar.xz | $tar_exec -x --ignore-case --wildcards -O '**/readme.
 
 echo 'darwin x64'
 echo '  downloading from evermeet.cx'
-download $(curl 'https://evermeet.cx/ffmpeg/info/ffmpeg/7.0' -fsS| jq -rc '.download.zip.url') ffmpeg-darwin-x64.zip
-download $(curl 'https://evermeet.cx/ffmpeg/info/ffprobe/7.0' -fsS| jq -rc '.download.zip.url') ffprobe-darwin-x64.zip
+download $(curl 'https://evermeet.cx/ffmpeg/info/ffmpeg/6.0' -fsS| jq -rc '.download.zip.url') ffmpeg-darwin-x64.zip
+download $(curl 'https://evermeet.cx/ffmpeg/info/ffprobe/6.0' -fsS| jq -rc '.download.zip.url') ffprobe-darwin-x64.zip
 echo '  extracting'
 unzip -o -d ../bin -j ffmpeg-darwin-x64.zip ffmpeg
 unzip -o -d ../bin -j ffprobe-darwin-x64.zip ffprobe
