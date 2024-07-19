@@ -11,7 +11,7 @@ if [ -z "$tar_exec" ]; then
 	1>&2 echo "no tar executable found"
 	exit 1
 fi
-# https://rtfmp.wordpress.com/2017/03/31/difference-7z-7za-and-7zr/
+# https://rtfmp.wordpress.com/2017/03/31/difference-7z-7za-and-7zr
 p7zip_exec=$(command -v 7zr)
 if [ $? -ne 0 ]; then
 	p7zip_exec=$(command -v 7zz)
